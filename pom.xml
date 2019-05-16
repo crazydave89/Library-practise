@@ -32,4 +32,25 @@
         </plugins>
     </build>
 
+    <dependencies>
+        <dependency>
+            <artifactId>mysql-connector-java</artifactId>
+            <groupId>mysql</groupId>
+            <version>8.0.15</version>
+        </dependency>
+        <dependency>
+            <artifactId>hibernate-core</artifactId>
+            <groupId>org.hibernate</groupId>
+            <version>5.4.2.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
 </project>
