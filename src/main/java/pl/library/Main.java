@@ -12,7 +12,10 @@ public class Main {
 
         EntityManager entityManager = EntityManagerCreator.getEntityManager();
         Book book = new Book("tytul",null, LocalDate.now(),"publisher", BookType.PHANTASY,300);
+        entityManager.getTransaction().begin();
         entityManager.persist(book);
+        entityManager.getTransaction().commit();
+        entityManager.close();
     }
 
 }

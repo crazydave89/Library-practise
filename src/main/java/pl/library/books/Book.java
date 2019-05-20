@@ -18,6 +18,7 @@ public class Book {
 
     private String title;
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id")
     private Author author;
     private LocalDate realeaseDate;
     private String publisher;

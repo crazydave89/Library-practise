@@ -5,8 +5,6 @@ import lombok.NoArgsConstructor;
 import pl.library.books.Book;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data
@@ -20,8 +18,8 @@ public class Author {
     private String name;
     private String lastName;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    List<Book> bookList = new ArrayList<>();
+    @OneToOne(mappedBy = "author",fetch = FetchType.LAZY)
+    private Book book;
 
     public Author(String name, String lastName) {
         this.name = name;
