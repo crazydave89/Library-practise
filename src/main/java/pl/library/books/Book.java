@@ -28,17 +28,21 @@ public class Book {
     @Enumerated(value = EnumType.STRING)
     private BookType bookType;
     private int numberOfPages;
+    private LocalDate borrowedTime;
 
     @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Book(String title, Author author, LocalDate realeaseDate, String publisher, BookType bookType, int numberOfPages) {
+    public Book(String title, Author author, LocalDate realeaseDate, String publisher, BookType bookType, int numberOfPages, LocalDate borrowedTime, User user) {
         this.title = title;
         this.author = author;
         this.realeaseDate = realeaseDate;
         this.publisher = publisher;
         this.bookType = bookType;
         this.numberOfPages = numberOfPages;
+        this.borrowedTime = borrowedTime;
+        this.user = user;
     }
+
 }
